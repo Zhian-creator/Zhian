@@ -19,6 +19,12 @@ This submission covers both evaluation modes required by the benchmark: E2E and 
 
 VulnRepair consists of a vulnerability-discovery frontend and an evidence-driven repair backend. The main S2–S4 repair workflow is driven by DeepSeek V4 Flash. The repair backend is coordinated by a root orchestrator and includes six task agents: an Evidence Agent, a PoC Mutation Agent, a Root-Cause Analysis Agent, a Patch Agent, a Validation Agent, and a Failure Attribution Agent. Once the evidence stage is complete, PoC mutation and root-cause analysis run in parallel. Their differential evidence and causal analysis converge during patch generation. An independent Supervision Agent reviews key stage boundaries and controls model escalation. Most tasks are completed through the DeepSeek pipeline; cases that still fail validation after a bounded repair loop are escalated to the vulnerability-domain model Zhian for one additional analysis based on the accumulated failure evidence, followed by final validation.
 
+<p align="center">
+  <img src="assets/zhian-pipeline.png"
+       alt="Zhian Pipeline"
+       width="90%">
+</p>
+
 ### 3.1 Vulnerability Discovery
 
 The end-to-end workflow begins with Codex exploring the vulnerable source code and local build environment. It constructs candidate inputs and iteratively refines them based on execution feedback until it produces a PoC that reliably reproduces the target crash. The repair system is not given the root cause in advance. The repair stage begins only after the PoC has been validated on the vulnerable build.
