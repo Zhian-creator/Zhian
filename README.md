@@ -1,5 +1,7 @@
 # Zhian·Changying（智安·长缨）
 
+**English** | [简体中文](README.zh-CN.md)
+
 A structured vulnerability discovery and repair system for CyberGym-E2E, developed by the Zhian·Changying team at the Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS).
 
 ## 1. System Overview
@@ -18,7 +20,7 @@ This submission covers both evaluation modes required by the benchmark: E2E and 
 
 ## 3. Method
 
-Zhian·Changying consists of a vulnerability-discovery frontend and an evidence-driven repair backend. The main S2–S4 repair workflow is driven by DeepSeek V4 Flash. The repair backend is coordinated by a root orchestrator and includes six task agents: an Evidence Agent, a PoC Mutation Agent, a Root-Cause Analysis Agent, a Patch Agent, a Validation Agent, and a Failure Attribution Agent. Once the evidence stage is complete, PoC mutation and root-cause analysis run in parallel. Their differential evidence and causal analysis converge during patch generation. An independent Supervision Agent reviews key stage boundaries and controls model escalation. Most tasks are completed through the DeepSeek pipeline; cases that still fail validation after a bounded repair loop are escalated to the vulnerability-domain model Zhian for one additional analysis based on the accumulated failure evidence, followed by final validation.
+Zhian·Changying consists of a vulnerability-discovery frontend and an evidence-driven repair backend. The main S2–S4 repair workflow is driven by DeepSeek V4 Flash. The repair backend is coordinated by a root orchestrator and includes six task agents: an Evidence Agent, a PoC Mutation Agent, a Root-Cause Analysis Agent, a Patch Agent, a Validation Agent, and a Failure Attribution Agent. Once the evidence stage is complete, PoC mutation and root-cause analysis run in parallel. Their differential evidence and causal analysis converge during patch generation. An independent Supervision Agent reviews key stage boundaries and controls model escalation. Most tasks are completed through the DeepSeek pipeline; cases that still fail validation after a bounded repair loop are escalated to the vulnerability-domain model Zhian for one additional analysis based on the accumulated failure evidence, whose patch becomes the final submission candidate.
 
 <p align="center">
   <img src="assets/zhian-pipeline.png"
