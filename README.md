@@ -2,7 +2,7 @@
 
 **English** | [简体中文](README.zh-CN.md)
 
-A structured vulnerability discovery and repair system for CyberGym-E2E, developed by the Zhian·Changying team at the Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS).
+Zhian·Changying is a vulnerability discovery and intelligent repair system developed at the Institute of Information Engineering, Chinese Academy of Sciences (IIE, CAS). It is an integral part of the Zhian series of vulnerability-domain large language models and agent clusters developed by the cyber offense and defense team led by Research Professor Weiping Wang. Developed by Research Professor Zhigang Lu's team in the Network Threat Analysis Laboratory, Zhian·Changying focuses on vulnerability root-cause localization, safety-constraint-driven patch generation, multi-agent collaboration, and repair validation, with the goal of advancing autonomous analysis and intelligent repair of vulnerabilities in complex software.
 
 ## 1. System Overview
 
@@ -105,3 +105,8 @@ The agents can use source-code search, file editing, shell commands, compilation
 After the preparation stage, the agent execution environment has no external network access. Web search, browser access, URL fetching, remote MCP servers, and other external retrieval capabilities are also disabled. Git history, reference PoCs, task identifiers, and other information that could reveal the ground-truth patch are removed from the environment. Throughout execution, the agent cannot access the ground-truth patch or patched source code. After evaluation, we inspect the trajectories to confirm that the system did not circumvent the task using external vulnerability information, project history, or an existing patch.
 
 The final submission materials include aggregate results for both modes, per-task S1–S4 outcomes, model resource usage, final PoCs and patches, and the `vul_exit_code` and `fix_exit_code` for every instance. We also provide complete trajectories, execution logs, final PoCs, and patches for ten tasks for review. Apart from agent orchestration, model routing, and the internal analysis and validation workflow, we do not modify CyberGym-E2E's S1–S4 evaluation logic. The actual timeouts, resource limits, and other runtime parameters are reported in the structured submission report.
+
+
+## Contact
+
+For research discussions and collaboration, please contact [hanxueying@iie.ac.cn](mailto:hanxueying@iie.ac.cn).
